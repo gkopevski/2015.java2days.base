@@ -11,6 +11,9 @@
 
         'common.configuration',
 
+        'templates-app',
+        'templates-common',
+
         'java2days.table',
         'java2days.meal'
     ];

@@ -1,3 +1,14 @@
-/**
- * Created by gkopevski on 10/28/15.
- */
+(function () {
+    'use strict';
+
+    angular.module('java2days.table')
+        .controller('TableController',
+        function ($scope,moduleProvider) {
+
+            $scope.title = 'Title!';
+
+            $scope.meal = moduleProvider.get('meal').available;
+
+        });
+
+}());

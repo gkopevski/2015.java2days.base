@@ -36,17 +36,12 @@ module.exports = function (grunt) {
     /**
      * recepie variable, read the recepie to get the specified modules and place them in app
      */
-    var upcConfigFile = grunt.file.readJSON('modules.mycare.de.json');
+    var java2daysConfigFile = grunt.file.readJSON('modules.java2days.json');
     /**
      * this is used for fetching 1 by 1 each of the module so we can solve the dependencies
      */
     var tempConfigFile = {};
     var commonModuleDependencyFile = {};
-    var credentials = grunt.file.readJSON('git.credentials.json');
-    for (var key in upcConfigFile) {
-        upcConfigFile[key].options.repository = upcConfigFile[key].options.repository.replace('username', credentials.username);
-        upcConfigFile[key].options.repository = upcConfigFile[key].options.repository.replace('password', credentials.password);
-    }
 
     var src = [
         'vendor/*'
@@ -82,7 +77,7 @@ module.exports = function (grunt) {
     /**
      * Load in our build configuration file.
      */
-    var userConfig = require('./build.config.js');
+    var userConfig = require('./build.config.js');;
     /**
      * This is the configuration object Grunt uses to give each plugin its
      * instructions.
@@ -125,10 +120,6 @@ module.exports = function (grunt) {
                 open: true // do not open node-inspector in Chrome automatically
             }
         },
-        /**
-         clonning specific branch
-         */
-        gitclone: upcConfigFile,
         /**
          * Increments the version number, etc.
          */
@@ -198,20 +189,6 @@ module.exports = function (grunt) {
                     }
                 ]
             },
-            build_vendor_assets: {
-                files: [
-                    {
-                        src: [
-                            '<%= vendor_files.assets %>',
-                            '<%= vendor_custom_files.assets %>'
-                        ],
-                        dest: '<%= build_dir %>/assets/img_vendor',
-                        cwd: '.',
-                        expand: true,
-                        flatten: true
-                    }
-                ]
-            },
             build_appjs: {
                 files: [
                     {
@@ -226,8 +203,7 @@ module.exports = function (grunt) {
                 files: [
                     {
                         src: [
-                            vendorJSFiles,
-                            '<%= vendor_custom_files.js %>'
+                            vendorJSFiles
                         ],
                         dest: '<%= build_dir %>/',
                         cwd: '.',
@@ -294,49 +270,6 @@ module.exports = function (grunt) {
                 src: '<%= build_dir %>/index.html',
                 dest: '<%= compile_dir %>/index.html'
             },
-            cordovaToTemp: {
-                files: [
-                    {
-                        src: ['cordova.js', 'cordova_plugins.js'],
-                        dest: 'platforms/android/assets/temp',
-                        cwd: 'platforms/android/assets/www',
-                        expand: true
-                    },
-                    {
-                        src: ['**'],
-                        dest: 'platforms/android/assets/temp/plugins',
-                        cwd: 'platforms/android/assets/www/plugins',
-                        expand: true
-                    }
-                ]
-            },
-            cordovaToWWW: {
-                files: [
-                    {
-                        src: ['cordova.js', 'cordova_plugins.js'],
-                        dest: 'platforms/android/assets/www',
-                        cwd: 'platforms/android/assets/temp',
-                        expand: true
-                    },
-                    {
-                        src: ['**'],
-                        dest: 'platforms/android/assets/www/plugins',
-                        cwd: 'platforms/android/assets/temp/plugins',
-                        expand: true
-                    }
-                ]
-            },
-            wwwBuild: {
-                files: [
-                    {
-                        src: ['**'],
-                        dest: 'platforms/android/assets/www',
-                        cwd: '<%= build_dir %>',
-                        expand: true
-                    }
-                ]
-            },
-
         },
 
         /**
@@ -497,12 +430,10 @@ module.exports = function (grunt) {
                 dir: '<%= build_dir %>',
                 src: [
                     vendorJSFiles,
-                    '<%= vendor_custom_files.js %>',
                     '<%= build_dir %>/src/**/*.js',
                     '<%= html2js.common.dest %>',
                     '<%= html2js.app.dest %>',
                     '<%= html2js.vendor_custom.dest %>',
-                    '<%= vendor_custom_files.css %>',
                     '<%= build_dir %>/assets/css/style.css'
                 ]
             }
@@ -546,7 +477,7 @@ module.exports = function (grunt) {
                         expand: true,
                         flatten: true,
                         src: ['src/app/myupc/base/app.js'],
-                        dest: 'www/src/app/myupc/base/'
+                        dest: 'dist/src/app/myupc/base/'
                     }
                 ]
             }
@@ -593,7 +524,6 @@ module.exports = function (grunt) {
         //'concat:build_css',
         'copy:build_modulescss',
         'copy:build_app_assets',
-        'copy:build_vendor_assets',
         'copy:build_modules_assets',
         'copy:build_appjs',
         'copy:build_vendorjs',
@@ -602,52 +532,10 @@ module.exports = function (grunt) {
         'sass:build',
         'clean:sassmodules',
         'index:build',
-        'replace',
-        'buildAndroid'
+        'replace'
     ]);
 
-    grunt.registerTask('buildAndroid', [
-        'mkTempDir',
-        'copy:cordovaToTemp',
-        'rmWWWDir',
-        'copy:wwwBuild',
-        'copy:cordovaToWWW',
-        'rmAssetsTempDir'
-    ]);
 
-    grunt.registerTask('mkTempDir', function(){
-        grunt.file.mkdir('platforms/android/assets/temp');
-    });
-
-    grunt.registerTask('rmWWWDir', function(){
-        grunt.file.delete('platforms/android/assets/www');
-    });
-
-    grunt.registerTask('rmAssetsTempDir', function(){
-        grunt.file.delete('platforms/android/assets/temp');
-    });
-
-
-    grunt.registerTask('e2e', [
-        //'protractor_webdriver:run',
-        'protractor:run'
-    ]);
-
-    /**
-     * The `modulein` task installs the business module
-     * The `moduleout` task uninstalls the module
-     * grunt modulein:id where id is taken from modules.json
-     */
-    grunt.registerTask('modulein', function (library) {
-        var modules = grunt.file.readJSON('modules.json');
-        var repo = modules[library];
-        grunt.option('repo', repo);
-        grunt.task.run('shell:gitclone:' + library);
-    });
-
-    grunt.registerTask('moduleout', function (library) {
-        grunt.task.run('clean:onuninstall:' + library);
-    });
     grunt.registerTask('build_sass', ['copy:build_modulescss', 'sass:build']);
     grunt.registerTask('compile_sass', ['sass:compile']);
 
@@ -755,7 +643,7 @@ module.exports = function (grunt) {
 
 
     grunt.registerTask('upcModulesInstall', function () {
-        tempConfigFile = upcConfigFile;
+        tempConfigFile = java2daysConfigFile;
         grunt.config.set('gitclone', tempConfigFile);
         grunt.task.run('gitclone');
     });
@@ -765,20 +653,20 @@ module.exports = function (grunt) {
         //create the
         grunt.config.set('gitclone', tempConfigFile);
 
-        var keys = Object.keys(upcConfigFile);
+        var keys = Object.keys(java2daysConfigFile);
 
         for (var i = 0; i < keys.length; i++) {
-            //console.log(keys[i] + "=" + JSON.stringify(upcConfigFile[keys[i]]));
+            //console.log(keys[i] + "=" + JSON.stringify(java2daysConfigFile[keys[i]]));
 
 
             try {
-                var moduleDependencies = grunt.file.readJSON(upcConfigFile[keys[i]].options.directory + '/moduleDependencies.json');
+                var moduleDependencies = grunt.file.readJSON(java2daysConfigFile[keys[i]].options.directory + '/moduleDependencies.json');
             }
             catch (err) {
                 continue;
             }
 
-            //console.log('DEPENDENCIES FROM '+ upcConfigFile[keys[i]].options.directory + '/moduleDependencies.json   ' + JSON.stringify(moduleDependencies));
+            //console.log('DEPENDENCIES FROM '+ java2daysConfigFile[keys[i]].options.directory + '/moduleDependencies.json   ' + JSON.stringify(moduleDependencies));
             var moduleDependenciesKeys = Object.keys(moduleDependencies);
 
             var dependExists = false;
@@ -820,7 +708,7 @@ module.exports = function (grunt) {
     grunt.registerTask('buildMenu', function () {
         grunt.file.recurse('src/app', populateMenuItemsFile);
         grunt.file.recurse('src/common', populateMenuItemsFile);
-        grunt.file.write('www/assets/bundles/mainMenuItems.json', JSON.stringify(menuItemList));
+        grunt.file.write('dist/assets/bundles/mainMenuItems.json', JSON.stringify(menuItemList));
     });
 
     function populateMenuItemsFile(abspath, rootdir, subdir, filename) {
@@ -835,13 +723,13 @@ module.exports = function (grunt) {
     //////////////////////////////////////////////////////////
     function generateDependencies(){
         var depsNotNeeded = ['base', 'skin', 'common.camera'];
-        var dependencieKeys = Object.keys(upcConfigFile);
+        var dependencieKeys = Object.keys(java2daysConfigFile);
         var modules = new Array();
         for(var i = 0, dep; dep = dependencieKeys[i]; i++){
             var module = new Object();
-            module.name = upcConfigFile[dep].options.hasOwnProperty('module') ? upcConfigFile[dep].options.module : dep;
+            module.name = java2daysConfigFile[dep].options.hasOwnProperty('module') ? java2daysConfigFile[dep].options.module : dep;
             try {
-                var moduleDependencies = grunt.file.readJSON(upcConfigFile[dep].options.directory + '/moduleDependencies.json');
+                var moduleDependencies = grunt.file.readJSON(java2daysConfigFile[dep].options.directory + '/moduleDependencies.json');
                 module.dependsOf = separateSubDependenciesByModuleName(moduleDependencies);
             }
             catch (err) {
@@ -849,12 +737,12 @@ module.exports = function (grunt) {
             }
             modules.push(module);
         }
-        var allModules = removeDepencenciesDuplicates(modules);
-        var cleanModules = removeNotNededDependencies(allModules);
+        var allModules = removeDependenciesDuplicates(modules);
+        var cleanModules = removeNotNestedDependencies(allModules);
         return cleanModules.sort();
     }
 
-    function removeDepencenciesDuplicates(allModules){
+    function removeDependenciesDuplicates(allModules){
         var subDependencies = new Array();
         for(var i = 0, module; module = allModules[i]; i++){
             if(module.hasOwnProperty('dependsOf')){
@@ -879,7 +767,7 @@ module.exports = function (grunt) {
         return depends;
     }
 
-    function removeNotNededDependencies(allModules){
+    function removeNotNestedDependencies(allModules){
         var depsNotNeeded = ['base', 'skin', 'common.camera'];
         var cleanModules = new Array();
         for(var i = 0, module; module = allModules[i]; i++){

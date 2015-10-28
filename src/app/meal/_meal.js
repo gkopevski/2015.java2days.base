@@ -4,13 +4,19 @@
     angular.module('java2days.meal', []);
 
     angular.module('java2days.meal')
-        .config(function config($stateProvider) {
+        .config(function config($stateProvider,moduleProviderProvider) {
             $stateProvider
                 .state('meal', {
                     url: '/meal',
                     title: 'Meal',
-                    templateUrl: 'app/meal/meal.tpl.html',
+                    templateUrl: 'meal/meal.tpl.html',
                     controller: 'MealController'
                 });
+
+            var module = {
+                'name': 'meal',
+                'available':true
+            };
+            moduleProviderProvider.register(module);
         });
 }());

@@ -7,8 +7,8 @@ module.exports = {
      * development and the `compile_dir` folder is where our app resides once it's
      * completely built.
      */
-    build_dir: 'www',
-    compile_dir: 'www-bin',
+    build_dir: 'dist',
+    compile_dir: 'dist-bin',
 
     /**
      * This is a collection of file patterns that refer to our app code (the
@@ -68,43 +68,6 @@ module.exports = {
      */
     vendor_files: {
         js: ['vendor/**/*.js'],
-        css: [],
-        assets: [
-            'vendor/leaflet/dist/images/layers.png',
-            'vendor/leaflet/dist/images/layers-2x.png',
-            'vendor/leaflet/dist/images/marker-icon.png',
-            'vendor/leaflet/dist/images/marker-icon-2x.png',
-            'vendor/leaflet/dist/images/marker-shadow.png',
-            'vendor/ng-slider/dist/img/jslider.png'
-        ]
-    },
-    vendor_custom_files: {
-        js: [
-            'vendorCustom/ADB_Helper/ADB_Helper.js',
-            'vendorCustom/crypto-js/tripledes.js',
-            'vendorCustom/iScroll/iscroll.js',
-            'vendorCustom/iScroll/ng-iscroll.min.js',
-            'vendorCustom/toolbox-date/toolbox-date.js',
-            'vendorCustom/webtoolkit/webtoolkit.sha1.js',
-            'vendorCustom/rules/angular-rules.js',
-            'vendorCustom/rules/angular-rules-loader-static-files.js',
-            'vendorCustom/rules/angular-rules-storage-cookie.js',
-            'vendorCustom/rules/angular-rules-storage-local.js',
-            'vendorCustom/ang-accordion/js/ang-accordion.js',
-            'vendorCustom/loggly-jslogger-master/src/loggly.tracker.min.js',
-            'vendorCustom/loggly-jslogger-master/src/loggly.tracker.min.map'
-
-        ],
-        css: [
-            'vendorCustom/ang-accordion/css/ang-accordion.css'
-        ],
-        assets: [
-            'vendorCustom/leaflet-search/icon_current_position.png',
-            'vendorCustom/leaflet-search/loader.png',
-            'vendorCustom/leaflet-search/search-icon.png',
-            'vendorCustom/leaflet-search/search-icon-mobile.png',
-            'vendorCustom/ang-accordion/images/down-icon.png',
-            'vendorCustom/ang-accordion/images/right-icon.png'
-        ]
+        css: []
     }
 };

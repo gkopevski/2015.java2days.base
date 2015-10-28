@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=UTF8">
+
+        <!--&lt;!&ndash; compiled CSS &ndash;&gt;-->
+        <!--&lt;!&ndash; build:css assets/css/style.min.css &ndash;&gt;<% styles.forEach( function ( file ) { %>-->
+        <!--<link rel="stylesheet" type="text/css" href="<%= file %>"/><% }); %>-->
+        <!--&lt;!&ndash; endbuild &ndash;&gt;-->
+
+    </head>
+    <body ng-cloak>
+
+        <div ui-view class="view-container"></div>
+
+
+        <!-- compiled JavaScript -->
+        <!-- build:js myupc.js --><% scripts.forEach( function ( file ) { %>
+        <script type="text/javascript" src="<%= file %>"></script><% }); %>
+        <!-- endbuild -->
+
+
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>

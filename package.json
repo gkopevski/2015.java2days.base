@@ -1,0 +1,48 @@
+{
+  "author": "Polar Cape",
+  "name": "MyUPC",
+  "version": "1.2.1",
+  "description": "Hybrid App for UPC customers",
+  "licenses": {
+    "type": "MIT",
+    "url": "https://raw.github.com/ngbp/ngbp/master/LICENSE"
+  },
+  "bugs": "https://polarcape.atlassian.net",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:polarcape/myupc.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-bump": "0.0.6",
+    "grunt-contrib-clean": "0.4.1",
+    "grunt-contrib-compass": "1.0.1",
+    "grunt-contrib-concat": "0.4.0",
+    "grunt-contrib-copy": "0.4.1",
+    "grunt-contrib-cssmin": "0.13.0",
+    "grunt-contrib-sass": "0.8.1",
+    "grunt-contrib-uglify": "0.2.7",
+    "grunt-contrib-watch": "0.4.4",
+    "grunt-conventional-changelog": "0.1.2",
+    "grunt-debug-task": "0.1.5",
+    "grunt-git": "0.3.3",
+    "grunt-html2js": "0.1.9",
+    "grunt-karma": "latest",
+    "grunt-ng-annotate": "0.8.0",
+    "grunt-protractor-runner": "1.1.4",
+    "grunt-protractor-webdriver": "0.2.0",
+    "grunt-replace": "^0.11.0",
+    "grunt-shell": "1.1.1",
+    "grunt-usemin": "3.0.0",
+    "jasmine-core": "^2.3.4",
+    "karma": "latest",
+    "karma-firefox-launcher": "0.1.3",
+    "karma-jasmine": "0.3.6",
+    "karma-phantomjs-launcher": "0.2.1",
+    "protractor": "1.6.1",
+    "grunt-eslint": "^15.0.0"
+  },
+  "scripts": {
+    "install": "gem install sass-globbing --version 1.1.0 --source http://rubygems.org"
+  }
+}
