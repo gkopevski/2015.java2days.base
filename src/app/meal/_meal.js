@@ -9,8 +9,12 @@
                 .state('meal', {
                     url: '/meal',
                     title: 'Meal',
-                    templateUrl: 'meal/meal.tpl.html',
-                    controller: 'MealController'
+                    views: {
+                        'content': {
+                            templateUrl: 'meal/meal.tpl.html',
+                            controller: 'MealController'
+                        }
+                    }
                 });
 
             var module = {

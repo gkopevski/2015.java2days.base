@@ -18,11 +18,10 @@
             return {
                 restrict: 'EA',
                 replace: false,
-                templateUrl: 'general/menu/mainMenu.tpl.html',
+                templateUrl: 'menu/mainMenu.tpl.html',
                 controller: function ($scope,
                                       $state,
                                       Mainmenu) {
-
 
                     $scope.mainMenuItemsSorted = [];
 
@@ -31,20 +30,11 @@
                             sortItems(response.data);
                         },
                         function (error) {
+                            console.log(JSON.stringify(error));
                         });
 
                     function sortItems(menuItemList) {
-                        var sortedOrder = $rules.instant('Main_menu.order').split(',');
-                        var menuItemIndex;
-                        var index;
-                        for (index in sortedOrder) {
-                            for (menuItemIndex in menuItemList) {
-                                if (menuItemList[menuItemIndex].name === sortedOrder[index]) {
-                                    $scope.mainMenuItemsSorted.push(menuItemList[menuItemIndex]);
-                                    break;
-                                }
-                            }
-                        }
+                        $scope.mainMenuItemsSorted = menuItemList;
                     };
 
                     $scope.navigate = function (stateName, param) {

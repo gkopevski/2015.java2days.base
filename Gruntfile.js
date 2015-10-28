@@ -476,8 +476,8 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         flatten: true,
-                        src: ['src/app/myupc/base/app.js'],
-                        dest: 'dist/src/app/myupc/base/'
+                        src: ['src/app/base/app.js'],
+                        dest: 'dist/src/app/base'
                     }
                 ]
             }

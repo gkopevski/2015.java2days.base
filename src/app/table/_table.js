@@ -10,8 +10,12 @@
                 .state('table', {
                     url: '/table',
                     title: 'Table',
-                    templateUrl: 'table/table.tpl.html',
-                    controller: 'TableController'
+                    views: {
+                        'content': {
+                            templateUrl: 'table/table.tpl.html',
+                            controller: 'TableController'
+                        }
+                    }
                 });
 
             var module = {

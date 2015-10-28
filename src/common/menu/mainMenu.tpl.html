@@ -1,9 +1,7 @@
-<snap-drawers>
-    <div id="menuList" class="side-nav">
-        <a ng-repeat="menuItem in mainMenuItemsSorted" ng-if="showMenuItem(menuItem.ngIf)"
-           ng-click="navigate(menuItem.state, menuItem.param)" ng-class="menuItem.ngClass"
-           ng-disabled="buttonDisabled">
-            {{ menuItem.nameTranslate}}
-        </a>
-    </div>
-</snap-drawers>
+<div id="menuList" class="side-nav">
+    <a ng-repeat="menuItem in mainMenuItemsSorted"
+       ng-click="navigate(menuItem.state, menuItem.param)" ng-class="menuItem.ngClass"
+       ng-disabled="buttonDisabled">
+        {{ menuItem.nameTranslate}}
+    </a>
+</div>

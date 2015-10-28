@@ -3,64 +3,16 @@
         "options": {
             "repository": "https://username:password@bitbucket.org/polarcape/module.common.filters.git",
             "branch": "develop",
-            "directory": "src/common/general/filters",
-            "module": "common.filters"
-        }
-    },
-    "camera": {
-        "options": {
-            "repository": "https://username:password@bitbucket.org/polarcape/module.common.camera.git",
-            "branch": "develop",
-            "directory": "src/common/general/camera",
-            "module": "common.camera"
-        }
-    },
-    "dialogs": {
-        "options": {
-            "repository": "https://username:password@bitbucket.org/polarcape/module.common.dialogs.git",
-            "branch": "develop",
-            "directory": "src/common/general/dialogs",
-            "module": "common.dialogs"
-        }
-    },
-    "configuration": {
-        "options": {
-            "repository": "https://username:password@bitbucket.org/polarcape/module.common.configuration.git",
-            "branch": "develop",
-            "directory": "src/common/general/configuration",
+            "directory": "src/common/configuration",
             "module": "common.configuration"
         }
     },
-    "siteCatalyst": {
+    "menu": {
         "options": {
-            "repository": "https://username:password@bitbucket.org/polarcape/module.common.sitecatalyst.git",
+            "repository": "https://username:password@bitbucket.org/polarcape/module.common.filters.git",
             "branch": "develop",
-            "directory": "src/common/general/siteCatalyst",
-            "module": "siteCatalystUtils"
-        }
-    },
-    "i18n": {
-        "options": {
-            "repository": "https://username:password@bitbucket.org/polarcape/module.common.i18n.git",
-            "branch": "develop",
-            "directory": "src/common/general/i18n",
-            "module": "common.i18n"
-        }
-    },
-    "data": {
-        "options": {
-            "repository": "https://username:password@bitbucket.org/polarcape/module.common.data.git",
-            "branch": "develop",
-            "directory": "src/common/general/data",
-            "module": "peal.services"
-        }
-    },
-    "logging": {
-        "options": {
-            "repository": "https://username:password@bitbucket.org/polarcape/module.common.logging.git",
-            "branch": "develop",
-            "directory": "src/common/general/logging",
-            "module": "common.logging"
+            "directory": "src/common/menu",
+            "module": "common.menu"
         }
     }
 }
