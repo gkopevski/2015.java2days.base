@@ -298,7 +298,7 @@ module.exports = function (grunt) {
                         enable: true
                     },
                     {
-                        src: ['<%= vendor_files.js %>', '<%= vendor_custom_files.js %>'],
+                        src: ['<%= vendor_files.js %>'],
                         cwd: '<%= build_dir %>',
                         dest: '<%= build_dir %>',
                         expand: true,
@@ -490,7 +490,7 @@ module.exports = function (grunt) {
      */
     grunt.registerTask('jsar', [
         'build',
-        'copy:compile_assets',
+        //'copy:compile_assets',
         'ngAnnotate',
         'copy:index_html',
         'useminPrepare',
@@ -628,76 +628,6 @@ module.exports = function (grunt) {
 
         grunt.file.recurse('vendor', callback);
         //console.log(vendorJSFiles);
-    });
-
-    grunt.registerTask('firstInstall', [
-        'emptyProject',
-        'installModules',
-        'build'
-    ]);
-
-    grunt.registerTask('installModules', function () {
-        grunt.task.run('upcModulesInstall');
-        grunt.task.run('commonModulesInstall');
-    });
-
-
-    grunt.registerTask('upcModulesInstall', function () {
-        tempConfigFile = java2daysConfigFile;
-        grunt.config.set('gitclone', tempConfigFile);
-        grunt.task.run('gitclone');
-    });
-
-    grunt.registerTask('commonModulesInstall', function () {
-
-        //create the
-        grunt.config.set('gitclone', tempConfigFile);
-
-        var keys = Object.keys(java2daysConfigFile);
-
-        for (var i = 0; i < keys.length; i++) {
-            //console.log(keys[i] + "=" + JSON.stringify(java2daysConfigFile[keys[i]]));
-
-
-            try {
-                var moduleDependencies = grunt.file.readJSON(java2daysConfigFile[keys[i]].options.directory + '/moduleDependencies.json');
-            }
-            catch (err) {
-                continue;
-            }
-
-            //console.log('DEPENDENCIES FROM '+ java2daysConfigFile[keys[i]].options.directory + '/moduleDependencies.json   ' + JSON.stringify(moduleDependencies));
-            var moduleDependenciesKeys = Object.keys(moduleDependencies);
-
-            var dependExists = false;
-            for (var j = 0; j < moduleDependenciesKeys.length; j++) {
-                dependExists = false;
-                var storedDependenciesKeys = Object.keys(commonModuleDependencyFile);
-
-
-                for (var k = 0; k < storedDependenciesKeys.length; k++) {
-                    if (moduleDependencies[moduleDependenciesKeys[j]] == commonModuleDependencyFile[storedDependenciesKeys[k]]) {
-                        dependExists = true;
-                    }
-                }
-                if (!dependExists) {
-                    commonModuleDependencyFile[moduleDependenciesKeys[j]] = moduleDependencies[moduleDependenciesKeys[j]];
-                } else {
-                    console.log("This should not happen at this stage");
-                }
-            }
-        }
-
-        //console.log("DEPENDENCIES: " + JSON.stringify(commonModuleDependencyFile));
-
-        //set the credentials
-        for (var key in commonModuleDependencyFile) {
-            commonModuleDependencyFile[key].options.repository = commonModuleDependencyFile[key].options.repository.replace('username', credentials.username);
-            commonModuleDependencyFile[key].options.repository = commonModuleDependencyFile[key].options.repository.replace('password', credentials.password);
-        }
-        grunt.config.set('gitclone', commonModuleDependencyFile);
-
-        grunt.task.run('gitclone');
     });
 
     grunt.registerTask('emptyProject', function () {

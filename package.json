@@ -28,7 +28,7 @@
     "grunt-git": "0.3.3",
     "grunt-html2js": "0.1.9",
     "grunt-karma": "latest",
-    "grunt-ng-annotate": "0.8.0",
+    "grunt-ng-annotate": "^1.0.1",
     "grunt-protractor-runner": "1.1.4",
     "grunt-protractor-webdriver": "0.2.0",
     "grunt-replace": "^0.11.0",
