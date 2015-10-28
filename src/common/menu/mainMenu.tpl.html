@@ -1,0 +1,26 @@
+<snap-drawers>
+    <div class="sidebar sidebar-left" snap-drawer>
+        <div class="sidebar-profile-info">
+            <profile-directive></profile-directive>
+        </div>
+        <div id="nav" class="menu-wrapper">
+            <div id="menu" class="scrollable">
+                <div class="scrollable-content">
+                    <div id="menuList" class="side-nav">
+                        
+                        <a ng-repeat="menuItem in mainMenuItemsSorted" ng-if="showMenuItem(menuItem.ngIf)" clear-class
+                           ng-click="navigate(menuItem.state, menuItem.param)" ng-class="menuItem.ngClass" ng-disabled="buttonDisabled">                           
+                            {{ menuItem.nameTranslate | translate}}
+                            <div ng-show="menuItem.showNumber" class="nav-number">
+                                {{numberOfNotReadNotifications}}
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <div class="applicationName">
+            <span class="text-lg bolder">{{'About.app_name'|translate}}</span>
+            <div class="text-sm">{{'About.version'|translate}} {{appVersion}}</div>
+        </div>
+</snap-drawers>

@@ -1,0 +1,9 @@
+{
+    "id": 3,
+    "name": "usage",
+    "ngClass": "nav-usage",
+    "ngIf": "true",
+    "param": "{\"usageId\":\"0\"}",
+    "state": "home.usage.myusage",
+    "nameTranslate": "MainMenu.my_usage"
+}
