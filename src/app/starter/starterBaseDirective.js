@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    angular.module('java2days.meal')
-        .directive('mealLink', function () {
+    angular.module('java2days.starter')
+        .directive('starterLink', function () {
         return {
             restrict: 'EA',
             replace: false,
@@ -15,9 +15,9 @@
                 $scope.showLink = function () {
                     return true;
                 };
-                $scope.link ='MealLink';
+                $scope.link ='StarterLink';
             }],
-            templateUrl: 'meal/mealBase.tpl.html'
+            templateUrl: 'starter/starterBase.tpl.html'
         };
     });
 }());

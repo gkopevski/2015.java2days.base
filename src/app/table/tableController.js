@@ -5,9 +5,9 @@
         .controller('TableController',
         function ($scope,moduleProvider) {
 
-            $scope.title = 'Title!';
-
+            $scope.starter = moduleProvider.get('starter').available;
             $scope.meal = moduleProvider.get('meal').available;
+            $scope.dessert = moduleProvider.get('dessert').available;
 
         });
 
