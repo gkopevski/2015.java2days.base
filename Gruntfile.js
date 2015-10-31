@@ -159,7 +159,7 @@ module.exports = function (grunt) {
                 src: 'src/assets/sass/modules'
             },
             emptyProject: {
-                src: ['src/app/myupc/**/*', 'src/common/general/**/*']
+                src: ['src/app/**/*', 'src/common/general/**/*']
             }
         },
         /**
@@ -216,7 +216,7 @@ module.exports = function (grunt) {
                     {
                         src: ['**/*.scss'],
                         dest: 'src/assets/sass/modules/',
-                        cwd: 'src/app/myupc/',
+                        cwd: 'src/app/',
                         expand: true,
                         flatten: true
                     },

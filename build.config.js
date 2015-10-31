@@ -35,7 +35,7 @@ module.exports = {
         html: ['src/index.html'],
         less: 'src/less/main.less',
         scss: 'src/assets/sass/*.scss',
-        module: ['src/app/myupc/products/*.js', 'src/app/myupc/products/*.spec.js', 'src/app/myupc/products/**/*.js']
+        module: []
 
     },
 

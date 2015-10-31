@@ -1,0 +1,112 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+// Type
+// --------------------------------------------------
+
+$font-thin:'MuseoSans_300';
+$font-regular:'MuseoSans_500';
+$font-bold:'MuseoSans_700';
+$font-thick:'MuseoSans_900';
+$font-ziggo:'ziggonl';
+
+$font-size-default: 16px;
+$large-font-size:20px;
+$header-font-size:18px;
+$middle-font-size:15px;
+$small-font-size:12px;
+$extra-small-font-size:11px;
+
+
+
+$header-line-height:24px;
+
+
+// Colors
+// --------------------------------------------------
+
+// Main theme colors
+$primary-color: #f38c01 !default;
+$chrome-color:  #fff !default;
+$primary-color-active:#d17902;
+
+$tap-color:#f4f4f4;
+
+
+$color-bold:#000000;
+$color-bold-light:#333333;
+$link-color: #00aadd;
+$border-color: #ccd0da;
+//color that appears in header of choose country screen
+$header-bg-color:#f38c01 !default;
+$contra-color:#ffffff;
+$arrow-url :"../images/arrow-right.png";
+$arrow-white-url: "../images/arrow-right-2.png";
+$line-gradient: "../images/line-gradient.png";
+
+$paragraph-color: #666666;
+$paragraph-acccent:#262727;
+
+$bg-color-main:#edeef0;
+
+$menu-color:#262727;
+$menu-border:#424343;
+
+
+//default button styles
+$button-active-color: #12a5cd;
+$button-bg-color: #16bae7;
+$button-shadow: #1480a4;
+$button-color:#ffffff;
+$button-text-shadow:#0c82aa;
+
+// Action colors
+$default-color: #fff !default;
+$tap-color:#fbfbfb;
+
+// Bars
+// --------------------------------------------------
+
+$bar-base-height:  44px !default;
+$bar-tab-height:   50px !default;
+$bar-side-spacing: 10px !default;
+
+
+// Cards
+// --------------------------------------------------
+
+$card-bg: #fff !default;
+
+
+// Buttons
+// --------------------------------------------------
+
+$button-font-size: 12px !default;
+
+
+// Transitions
+// --------------------------------------------------
+
+$timing-fuction: cubic-bezier(.1,.5,.1,1) !default; // Inspired by @c2prods
+
+
+// Borders
+// --------------------------------------------------
+
+$border-default: 1px solid #ddd !default;
+$border-radius: 6px !default;
+
+// gradient argument
+//---------------------------------------------
+
+$gradients: (#edeef0, #edeef0, 0%, 100%);
+$section-shadow:(0 0 3px rgba(0,0,0,0.2));
+
+$main-gradient-arg: (
+  'from-color': '#99a5c1',
+  'to-color': '#D3DAEB',
+  'from': '0%',
+  'to': '30%'
+);
