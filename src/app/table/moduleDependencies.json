@@ -1,5 +1,5 @@
 {
-    "filters": {
+    "configuration": {
         "options": {
             "repository": "https://username:password@bitbucket.org/polarcape/module.common.filters.git",
             "branch": "develop",
