@@ -1,3 +1,104 @@
-.main {
+html {
+  height: 100%;
+}
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  min-height: 500px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0;
+  position: relative;
+  min-width: 100%;
+  background-image: url("../images/brown-pattern.jpg");
+  background-size: 20px 20px;
+  background-repeat: repeat;
+}
+.content {
+  margin-left: 200px;
+  height: 100%;
+}
 
+.view-container {
+  position: relative;
+  padding-left: 220px;
+  display: block;
+  flex: 1;
+  margin-left: 0;
+  margin-right: 0;
+  margin: 0 auto;
+  min-height: 100% !important;
+  height: 100% !important;
+  clear: right;
+}
+
+menu {
+  z-index: 200;
+  padding-left: 0;
+  transform: translateY(-50%);
+  float: left;
+  top: 50%;
+  width: 200px;
+  margin: 0 auto;
+  padding-top: 100px;
+  flex: 1;
+  bottom: 0;
+  position: relative;
+  margin-left: 20px;
+  height: 450px;
+  font-size: 28px;
+  display: block;
+  padding-bottom: 10px;
+}
+
+.menu-item {
+  /* clear: left; */
+  /* display: block; */
+  padding-bottom: 10px;
+  color: white;
+  padding-bottom: 0;
+  position: relative;
+  /* margin: 0 auto; */
+  line-height: 40px;
+  width: 200px;
+  padding-left: 20px;
+  display: inline-block;
+  clear:right;
+}
+
+.page-title {
+  position: absolute;
+  font-size: 30px;
+  margin: auto;
+  width: 820px;
+  padding-left: 10px;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 470px;
+  color: #663300;
+}
+
+.menu-item:before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  position: absolute;
+  top: 15px;
+  left: -2px;
+}
+
+.menu-and-content {
+  position: relative;
+  width: 840px;
+  margin: 0 auto;
+  min-height: 100% !important;
+  height: 100% !important;
+  clear: right;
 }
