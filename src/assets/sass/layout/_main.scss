@@ -9,7 +9,7 @@ body {
   padding: 0;
   position: relative;
   min-width: 100%;
-  background-image: url("../images/brown-pattern.jpg");
+  background-color: darkgray;
   background-size: 20px 20px;
   background-repeat: repeat;
 }
@@ -39,7 +39,6 @@ menu {
   top: 50%;
   width: 200px;
   margin: 0 auto;
-  padding-top: 100px;
   flex: 1;
   bottom: 0;
   position: relative;
@@ -54,7 +53,7 @@ menu {
   /* clear: left; */
   /* display: block; */
   padding-bottom: 10px;
-  color: white;
+  color: #444;
   padding-bottom: 0;
   position: relative;
   /* margin: 0 auto; */
@@ -66,25 +65,23 @@ menu {
 }
 
 .page-title {
-  position: absolute;
-  font-size: 30px;
-  margin: auto;
-  width: 820px;
-  padding-left: 10px;
+  position: relative;
+  font-size: 40px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  padding-left: 100px;
+  line-height: 100px;
   display: block;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  height: 470px;
-  color: #663300;
+  height: 100px;
+  color: #333;
 }
 
 .menu-item:before {
   content: '';
   width: 10px;
   height: 10px;
-  background: white;
+  background: #444;
   border-radius: 50px;
   -moz-border-radius: 50px;
   -webkit-border-radius: 50px;
@@ -98,7 +95,8 @@ menu {
   position: relative;
   width: 840px;
   margin: 0 auto;
-  min-height: 100% !important;
-  height: 100% !important;
+  height: 579px;
   clear: right;
+  top: 50%;
+  transform: translateY(-50%);
 }
