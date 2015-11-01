@@ -1,0 +1,18 @@
+[submodule "src/common/configuration"]
+	path = src/common/configuration
+	url = ../2015.java2days.configration.git
+[submodule "src/common/menu"]
+	path = src/common/menu
+	url = ../2015.java2days.menu.git
+[submodule "src/app/table"]
+	path = src/app/table
+	url = ../2015.java2days.table.git
+[submodule "src/app/meal"]
+	path = src/app/meal
+	url = ../2015.java2days.meal.git
+[submodule "src/app/dessert"]
+	path = src/app/dessert
+	url = ../2015.java2days.dessert.git
+[submodule "src/app/starter"]
+	path = src/app/starter
+	url = ../2015.java2days.starter.git
