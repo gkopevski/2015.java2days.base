@@ -1,8 +1,0 @@
-{
-    "id": 1,
-    "name": "table",
-    "ngClass": "nav-usage",
-    "ngIf": "true",
-    "state": "table",
-    "nameTranslate": "Table"
-}
