@@ -1,8 +1,0 @@
-{
-    "id": 2,
-    "name": "starter",
-    "ngClass": "nav-usage",
-    "ngIf": "true",
-    "state": "starter",
-    "nameTranslate": "Starter"
-}

@@ -1,8 +1,0 @@
-{
-    "id": 4,
-    "name": "dessert",
-    "ngClass": "nav-usage",
-    "ngIf": "true",
-    "state": "dessert",
-    "nameTranslate": "Dessert"
-}

@@ -1,40 +1,5 @@
 {
-    "meal": {
-        "options": {
-            "repository": "https://username:password@bitbucket.org/polarcape/module.lgi.usage.git",
-            "branch": "develop",
-            "directory": "src/app/meal",
-            "module": "java2days.meal",
-            "type": "business"
-        }
-    },
-    "table": {
-        "options": {
-            "repository": "https://username:password@bitbucket.org/polarcape/module.lgi.usage.git",
-            "branch": "develop",
-            "directory": "src/app/table",
-            "module": "java2days.table",
-            "type": "business"
-        }
-    },
-    "starter": {
-        "options": {
-            "repository": "https://username:password@bitbucket.org/polarcape/module.lgi.usage.git",
-            "branch": "develop",
-            "directory": "src/app/starter",
-            "module": "java2days.starter",
-            "type": "business"
-        }
-    },
-    "dessert": {
-        "options": {
-            "repository": "https://username:password@bitbucket.org/polarcape/module.lgi.usage.git",
-            "branch": "develop",
-            "directory": "src/app/dessert",
-            "module": "java2days.dessert",
-            "type": "business"
-        }
-    }
+
 }
 
 
