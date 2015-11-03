@@ -65,6 +65,9 @@ Features that you can find in this project for modularized app:
 - compiling your htmls into angular module for increased speed
 - and much more (you need to explore the Gruntfile.js to see all of the magic that is present :)) 
 
+Presentation:
+http://www.slideshare.net/gorankopevski/modularize-angular-js-apps-java2days-2015-54680898
+
 
 
 
