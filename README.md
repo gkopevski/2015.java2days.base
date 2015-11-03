@@ -17,6 +17,8 @@ This is container of the app which is the skeleton of the project. Business logi
 - https://github.com/gkopevski/2015.java2days.dessert
 
 To run this project you will need to add this repo as submodules and the root folder for all of them is src/app. It should look something like this:
+
+```sh
 root of the app/
     src/
         app/
@@ -25,16 +27,20 @@ root of the app/
           starter
           meal
           table
-          
+```
           
 The common modules represent modules that can be used in any other app. They need to be placed simmilary like the business modules. Here are the business modules and the structure how to place them as submodules in your empty-app project:
 - https://github.com/gkopevski/2015.java2days.menu
 - https://github.com/gkopevski/2015.java2days.configration
+
+```sh
  root of the app/
     src/
       common/
           menu
           configuration
+}}
+```
 
 These 2 common modules are example how to make dynamic menu that is built with gruntscript and in configuration you have an example how to register the modules in generic provider that will have all of the modules.
 
@@ -43,10 +49,11 @@ Important to note is that file modules.json needs to be placed on root of the em
 
 In order to build the app after you clone the this repo swtich to empty-app branch, add all of the submodules, modules.json file you will need to make:
 
+```sh
 npm install
 bower install
 grunt build
-
+```
 These 3 commands will build the app and will create the app in dist folder. You can run the app with oppening index.html file.
 
 Features that you can find in this project for modularized app:
