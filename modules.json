@@ -1,0 +1,38 @@
+{
+    "meal": {
+        "options": {
+            
+            "branch": "develop",
+            "directory": "src/app/meal",
+            "module": "java2days.meal",
+            "type": "business"
+        }
+    },
+    "table": {
+        "options": {
+            
+            "branch": "develop",
+            "directory": "src/app/table",
+            "module": "java2days.table",
+            "type": "business"
+        }
+    },
+    "starter": {
+        "options": {
+            
+            "branch": "develop",
+            "directory": "src/app/starter",
+            "module": "java2days.starter",
+            "type": "business"
+        }
+    },
+    "dessert": {
+        "options": {
+            
+            "branch": "develop",
+            "directory": "src/app/dessert",
+            "module": "java2days.dessert",
+            "type": "business"
+        }
+    }
+}
