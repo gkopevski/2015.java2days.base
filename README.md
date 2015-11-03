@@ -7,12 +7,8 @@ empty-app - container and base module of the app
 full-demo-without-modules - demo app before was modularized, the code is already splited
 modularized-app - app with added all submodules
 
-//
 To build the app you will need need to clone this repo
 
-
-
-//
 This app is example app with a lot of tips and tricks how to make modularized app.
 This is container of the app which is the skeleton of the project. Business logic is stored in src/app folder. You have 4 business modules which represent the business logic for a restaurant (table, starter, meal, dessert). All of this business modules are actually git repos:
 - https://github.com/gkopevski/2015.java2days.table
@@ -44,7 +40,7 @@ These 2 common modules are example how to make dynamic menu that is built with g
 
 Important to note is that file modules.json needs to be placed on root of the empty-app. That is configuration json file which containts all of the business modules which are basically definition of the app you are building. In modularized-app branch you can find the full demo as a reference how the app should look like.
 
-//
+
 In order to build the app after you clone the this repo swtich to empty-app branch, add all of the submodules, modules.json file you will need to make:
 
 npm install
