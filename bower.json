@@ -4,6 +4,8 @@
   "dependencies": {
     "angular": "^1.4.6",
     "angular-ui-router": "^0.2.15",
-    "angular-animate": "^1.4.6"
+    "angular-loader": "~1.4.6",
+    "angular-mocks": "~1.4.6",
+    "html5-boilerplate": "~5.2.0"
   }
 }
