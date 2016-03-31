@@ -1,7 +1,7 @@
 {
     "meal": {
         "options": {
-            "repository": "https://username:password@bitbucket.org/polarcape/module.lgi.usage.git",
+            "repository": "https://github.com/gkopevski/2015.java2days.meal.git",
             "branch": "develop",
             "directory": "src/app/meal",
             "module": "java2days.meal",
@@ -10,7 +10,7 @@
     },
     "table": {
         "options": {
-            "repository": "https://username:password@bitbucket.org/polarcape/module.lgi.usage.git",
+            "repository": "https://github.com/gkopevski/2015.java2days.table.git",
             "branch": "develop",
             "directory": "src/app/table",
             "module": "java2days.table",
@@ -19,7 +19,7 @@
     },
     "starter": {
         "options": {
-            "repository": "https://username:password@bitbucket.org/polarcape/module.lgi.usage.git",
+            "repository": "https://github.com/gkopevski/2015.java2days.starter.git",
             "branch": "develop",
             "directory": "src/app/starter",
             "module": "java2days.starter",
@@ -28,7 +28,7 @@
     },
     "dessert": {
         "options": {
-            "repository": "https://username:password@bitbucket.org/polarcape/module.lgi.usage.git",
+            "repository": "https://github.com/gkopevski/2015.java2days.dessert.git",
             "branch": "develop",
             "directory": "src/app/dessert",
             "module": "java2days.dessert",
