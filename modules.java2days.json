@@ -17,15 +17,6 @@
             "type": "business"
         }
     },
-    "starter": {
-        "options": {
-            "repository": "https://github.com/gkopevski/2015.java2days.starter.git",
-            "branch": "develop",
-            "directory": "src/app/starter",
-            "module": "java2days.starter",
-            "type": "business"
-        }
-    },
     "dessert": {
         "options": {
             "repository": "https://github.com/gkopevski/2015.java2days.dessert.git",
